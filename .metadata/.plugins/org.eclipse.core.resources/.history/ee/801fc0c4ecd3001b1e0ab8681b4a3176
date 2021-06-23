@@ -1,0 +1,31 @@
+/*
+ * msp.c
+ *
+ *  Created on: Jun 22, 2021
+ *      Author: yadav
+ */
+
+
+/**
+  * @brief  Initialize the MSP.
+  * @retval None
+  */
+#include "stm32f4xx_hal.h"
+
+void HAL_MspInit(void)
+{
+  /* NOTE : This function should not be modified, when the callback is needed,
+            the HAL_MspInit could be implemented in the user file
+   */
+// Here we do low layer processor specific inits
+	//1. Set up priority grouping of the arm cortex mx processor
+	HAL_NVIC_SetPriorityGrouping(NVIC_PRIORITYGROUP_4);
+	//2. Enable the required system exception of the arm cortex mx processor
+	     // System exception are controlled by system handler control and status register
+	SCB->SHCSR |= (0x7)<<16; // Enable usg fault, memory fault and bus fault exceptions
+	//3. Configure the priority for the system exceptions
+	HAL_NVIC_SetPriority(MemoryManagement_IRQn, 0, 0);
+	HAL_NVIC_SetPriority(BusFault_IRQn, 0, 0);
+	HAL_NVIC_SetPriority(UsageFault_IRQn, 0, 0);
+
+}
