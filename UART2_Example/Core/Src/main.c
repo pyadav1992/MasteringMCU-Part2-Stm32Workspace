@@ -5,6 +5,8 @@
  *      Author: yadav
  */
 
+#include <string.h>
+
 #include "main.h"
 #include "stm32f4xx_hal.h"
 
@@ -14,12 +16,47 @@ void Error_handler(void);
 
 UART_HandleTypeDef huart2;
 
+char *test_data = "The application is running\r\n";
+
 int main()
 {
 	HAL_Init(); // Initialize Hardware Abstraction Layer
 	SystemClockConfig(); // Initialize custom clock setting (If not then internal
 	                     // oscillator will be used)
 	UART2_Init();        // High level initialization of the UART
+
+	HAL_UART_Transmit(&huart2, (uint8_t*)test_data, (uint16_t)strlen(test_data), HAL_MAX_DELAY);
+
+	uint8_t rx_data;
+	uint8_t rx_data_buffer[100];
+	uint32_t count = 0;
+
+	while(1) // Rx characters until enter key is pressed
+	{
+		HAL_UART_Receive(&huart2, &rx_data, 1, HAL_MAX_DELAY);
+		if('\r'==rx_data)
+		{
+			break;
+		}
+		else
+		{
+			// Substract difference of ASCII for RX data is data is small letters
+			// This will convert the received character to capital letter
+			if((rx_data>='a') && (rx_data<='z'))
+			{
+				rx_data = rx_data - ('a' - 'A');
+			}
+			rx_data_buffer[count++] = rx_data;
+		}
+	}
+
+	rx_data_buffer[count++] = '\r';
+
+	// Send data to user
+	HAL_UART_Transmit(&huart2, (uint8_t*)rx_data_buffer, (uint16_t)count, HAL_MAX_DELAY);
+
+	while(1);
+
 	return 0;
 }
 

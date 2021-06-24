@@ -5,4 +5,10 @@
  *      Author: yadav
  */
 
+#include "time.h"
 
+void SysTick_Handler (void)
+{
+	HAL_IncTick(); // Increments systick global vairable
+	HAL_SYSTICK_IRQHandler(); // Processes systick interrupt and calls  callback function
+}
