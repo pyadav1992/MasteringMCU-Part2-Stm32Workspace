@@ -1,0 +1,7 @@
+22:33:33 **** Clean-only build of configuration Debug for project HSE_SYSCLK_8MHz ****
+make -j12 clean 
+rm -rf *
+ 
+
+22:33:33 Build Finished. 0 errors, 0 warnings. (took 170ms)
+
