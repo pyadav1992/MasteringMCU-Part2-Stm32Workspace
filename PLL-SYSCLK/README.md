@@ -3,4 +3,3 @@ Generate HCLK frequencies using PLL.
 - 84 MHz
 
 HSI as PLL's input source 
-HSE as PLL's input source
