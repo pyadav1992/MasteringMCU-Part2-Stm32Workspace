@@ -1,0 +1,74 @@
+/*
+ * main.c
+ *
+ *  Created on: Jun 22, 2021
+ *      Author: yadav
+ */
+
+#include <string.h>
+#include <stdbool.h>
+#include <memory.h>
+
+#include "main.h"
+
+void UART2_Init(void);
+void Error_handler(void);
+
+UART_HandleTypeDef huart2;
+
+
+int main()
+{
+	RCC_OscInitTypeDef osc_init;
+	RCC_ClkInitTypeDef clk_init;
+
+	HAL_Init(); // Initialize Hardware Abstraction Layer
+	UART2_Init();        // High level initialization of the UART
+
+	memset(&osc_init, sizeof(osc_init));
+	osc_init.OscillatorType = RCC_OSCILLATORTYPE_HSE;
+	osc_init.HSEState = RCC_HSE_BYPASS;
+	if( HAL_OK != HAL_RCC_GetOscConfig(&osc_init))
+	{
+		Error_handler();
+	}
+
+	memset(&clk_init, sizeof(clk_init));
+	clk_init.ClockType = (RCC_CLOCKTYPE_SYSCLK|RCC_CLOCKTYPE_HCLK| \
+			              RCC_CLOCKTYPE_PCLK1|RCC_CLOCKTYPE_PCLK2);
+	clk_init.SYSCLKSource   = RCC_SYSCLKSOURCE_HSE;
+	clk_init.AHBCLKDivider  = RCC_SYSCLK_DIV2;
+	clk_init.APB1CLKDivider = RCC_HCLK_DIV2;
+	clk_init.APB2CLKDivider = RCC_HCLK_DIV2;
+
+	if( HAL_OK != HAL_RCC_ClockConfig(&clk_init, FLASH_ACR_LATENCY_0WS))
+	{
+		Error_handler();
+	}
+
+	while(1);
+
+	return 0;
+}
+
+void UART2_Init(void)
+{
+	huart2.Instance = USART2;                    // USART2 base address in the peripheral memory
+	huart2.Init.BaudRate = 115200;                // Select baudrate
+	huart2.Init.WordLength = UART_WORDLENGTH_8B; // 8 bits in a word
+	huart2.Init.StopBits = UART_STOPBITS_1;      // 1 stop bit
+	huart2.Init.Parity = UART_PARITY_NONE;       // None parity
+	huart2.Init.HwFlowCtl = UART_HWCONTROL_NONE; // Hardware flow control
+	huart2.Init.Mode      = UART_MODE_TX_RX;     // Rx and Tx
+
+	if (HAL_OK != HAL_UART_Init(&huart2))                      // Initialize the UART
+	{
+		// THere is a problem
+		Error_handler();
+	}
+}
+
+void Error_handler(void)
+{
+	while(1);
+}
