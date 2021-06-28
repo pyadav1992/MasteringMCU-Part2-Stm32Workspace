@@ -14,6 +14,7 @@
 
 #define SYS_CLOCK_FREQ_50_MHz 0
 #define SYS_CLOCK_FREQ_80_MHz 1
+#define SYS_CLOCK_FREQ_84_MHz 2
 
 void UART2_Init(void);
 void Error_handler(void);
@@ -23,13 +24,11 @@ UART_HandleTypeDef huart2;
 
 int main()
 {
-
-
 	char msg[100] = "The application is running.\r\n";
 
 	HAL_Init(); // Initialize Hardware Abstraction Layer
 
-	SystemClock_Config(SYS_CLOCK_FREQ_50_MHz);
+	SystemClock_Config(SYS_CLOCK_FREQ_84_MHz);
 
 	UART2_Init();
 
@@ -105,7 +104,27 @@ void SystemClock_Config(uint8_t clock_frequency)
 			FLatency = FLASH_ACR_LATENCY_2WS;
 			break;
 		}
+		case SYS_CLOCK_FREQ_84_MHz:
+		{
+			// Enable the clock for the power controller
+			__HAL_RCC_PWR_CLK_ENABLE();
+			// Set regulator voltage scale as 1
+			__HAL_PWR_VOLTAGESCALING_CONFIG(PWR_REGULATOR_VOLTAGE_SCALE2);
+			osc_init.PLL.PLLM = 4;
+			osc_init.PLL.PLLN = 84;
+			osc_init.PLL.PLLP = 2;
+			osc_init.PLL.PLLQ = 7;
 
+			clk_init.ClockType = (RCC_CLOCKTYPE_SYSCLK|RCC_CLOCKTYPE_HCLK| \
+					              RCC_CLOCKTYPE_PCLK1|RCC_CLOCKTYPE_PCLK2);
+			clk_init.SYSCLKSource   = RCC_SYSCLKSOURCE_PLLCLK;
+			clk_init.AHBCLKDivider  = RCC_SYSCLK_DIV1;
+			clk_init.APB1CLKDivider = RCC_HCLK_DIV2;
+			clk_init.APB2CLKDivider = RCC_HCLK_DIV2;
+
+			FLatency = FLASH_ACR_LATENCY_2WS;
+			break;
+		}
 		default:
 			return;
 	}
