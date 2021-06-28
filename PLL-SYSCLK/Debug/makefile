@@ -35,34 +35,34 @@ $(wildcard ../makefile.init) \
 $(wildcard ../makefile.targets) \
 
 
-BUILD_ARTIFACT_NAME := HSE_SYSCLK_8MHz
+BUILD_ARTIFACT_NAME := PLL-SYSCLK
 BUILD_ARTIFACT_EXTENSION := elf
 BUILD_ARTIFACT_PREFIX := 
 BUILD_ARTIFACT := $(BUILD_ARTIFACT_PREFIX)$(BUILD_ARTIFACT_NAME).$(BUILD_ARTIFACT_EXTENSION)
 
 # Add inputs and outputs from these tool invocations to the build variables 
 EXECUTABLES += \
-HSE_SYSCLK_8MHz.elf \
+PLL-SYSCLK.elf \
 
 SIZE_OUTPUT += \
 default.size.stdout \
 
 OBJDUMP_LIST += \
-HSE_SYSCLK_8MHz.list \
+PLL-SYSCLK.list \
 
 OBJCOPY_BIN += \
-HSE_SYSCLK_8MHz.bin \
+PLL-SYSCLK.bin \
 
 
 # All Target
 all: main-build
 
 # Main-build Target
-main-build: HSE_SYSCLK_8MHz.elf secondary-outputs
+main-build: PLL-SYSCLK.elf secondary-outputs
 
 # Tool invocations
-HSE_SYSCLK_8MHz.elf: $(OBJS) $(USER_OBJS) C:\Users\yadav\OneDrive\Documents\Udemy\UdemyCources\MasteringMCU-2\MasteringMCU-Part2-Stm32Workspace\HSE_SYSCLK_8MHz\STM32F401RETX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "HSE_SYSCLK_8MHz.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\yadav\OneDrive\Documents\Udemy\UdemyCources\MasteringMCU-2\MasteringMCU-Part2-Stm32Workspace\HSE_SYSCLK_8MHz\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="HSE_SYSCLK_8MHz.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+PLL-SYSCLK.elf: $(OBJS) $(USER_OBJS) C:\Users\yadav\OneDrive\Documents\Udemy\UdemyCources\MasteringMCU-2\MasteringMCU-Part2-Stm32Workspace\PLL-SYSCLK\STM32F401RETX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "PLL-SYSCLK.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\yadav\OneDrive\Documents\Udemy\UdemyCources\MasteringMCU-2\MasteringMCU-Part2-Stm32Workspace\PLL-SYSCLK\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="PLL-SYSCLK.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
@@ -71,13 +71,13 @@ default.size.stdout: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
 	@echo 'Finished building: $@'
 	@echo ' '
 
-HSE_SYSCLK_8MHz.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-objdump -h -S $(EXECUTABLES) > "HSE_SYSCLK_8MHz.list"
+PLL-SYSCLK.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-objdump -h -S $(EXECUTABLES) > "PLL-SYSCLK.list"
 	@echo 'Finished building: $@'
 	@echo ' '
 
-HSE_SYSCLK_8MHz.bin: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-objcopy  -O binary $(EXECUTABLES) "HSE_SYSCLK_8MHz.bin"
+PLL-SYSCLK.bin: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-objcopy  -O binary $(EXECUTABLES) "PLL-SYSCLK.bin"
 	@echo 'Finished building: $@'
 	@echo ' '
 

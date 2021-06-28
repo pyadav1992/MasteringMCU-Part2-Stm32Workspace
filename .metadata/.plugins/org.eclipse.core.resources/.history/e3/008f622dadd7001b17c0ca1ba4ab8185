@@ -10,6 +10,4 @@
 
 #include "stm32f4xx_hal.h"
 
-void SystemClock_Config(uint8_t clock_frequency);
-
 #endif /* INC_MAIN_H_ */

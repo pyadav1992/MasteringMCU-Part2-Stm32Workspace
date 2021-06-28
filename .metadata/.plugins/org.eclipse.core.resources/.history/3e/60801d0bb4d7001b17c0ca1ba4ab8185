@@ -66,7 +66,7 @@ void SystemClock_Config(uint8_t clock_frequency)
 	memset(&clk_init, 0, sizeof(clk_init));
 
 	osc_init.OscillatorType      = RCC_OSCILLATORTYPE_HSI;
-	osc_init.HSIState            = RCC_HSI_ON;
+	osc_init.HSEState            = RCC_HSI_ON;
 	osc_init.HSICalibrationValue = 16;
 	osc_init.PLL.PLLState        = RCC_PLL_ON;
 	osc_init.PLL.PLLSource       = RCC_PLLSOURCE_HSI;

@@ -35,22 +35,6 @@ int main()
 
 	HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
 
-	memset(msg, 0, sizeof(msg));
-	sprintf(msg, "SYSCLK : %ld\r\n", HAL_RCC_GetSysClockFreq());
-	HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
-
-	memset(msg, 0, sizeof(msg));
-	sprintf(msg, "HCLK : %ld\r\n", HAL_RCC_GetHCLKFreq());
-	HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
-
-	memset(msg, 0, sizeof(msg));
-	sprintf(msg, "PCLK1 : %ld\r\n", HAL_RCC_GetPCLK1Freq());
-	HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
-
-	memset(msg, 0, sizeof(msg));
-	sprintf(msg, "PCLK2 : %ld\r\n", HAL_RCC_GetPCLK2Freq());
-	HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
-
 	while(1);
 
 	return 0;
@@ -66,7 +50,7 @@ void SystemClock_Config(uint8_t clock_frequency)
 	memset(&clk_init, 0, sizeof(clk_init));
 
 	osc_init.OscillatorType      = RCC_OSCILLATORTYPE_HSI;
-	osc_init.HSIState            = RCC_HSI_ON;
+	osc_init.HSEState            = RCC_HSI_ON;
 	osc_init.HSICalibrationValue = 16;
 	osc_init.PLL.PLLState        = RCC_PLL_ON;
 	osc_init.PLL.PLLSource       = RCC_PLLSOURCE_HSI;
@@ -92,7 +76,7 @@ void SystemClock_Config(uint8_t clock_frequency)
 		case SYS_CLOCK_FREQ_80_MHz:
 		{
 			osc_init.PLL.PLLM = 16;
-			osc_init.PLL.PLLN = 160;
+			osc_init.PLL.PLLN = 168;
 			osc_init.PLL.PLLP = 2;
 			osc_init.PLL.PLLQ = 2;
 
@@ -116,7 +100,7 @@ void SystemClock_Config(uint8_t clock_frequency)
 		Error_handler();
 	}
 
-	if(HAL_OK != HAL_RCC_ClockConfig(&clk_init, FLatency))
+	if(HAL_OK != HAL_RCC_ClockConfig(&clk_init, Flatency))
 	{
 		Error_handler();
 	}

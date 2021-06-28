@@ -1,24 +1,41 @@
-22:56:53 **** Incremental Build of configuration Debug for project HSE_SYSCLK_8MHz ****
+19:00:23 **** Incremental Build of configuration Debug for project PLL-SYSCLK ****
 make -j12 all 
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-arm-none-eabi-gcc -o "HSE_SYSCLK_8MHz.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\yadav\OneDrive\Documents\Udemy\UdemyCources\MasteringMCU-2\MasteringMCU-Part2-Stm32Workspace\HSE_SYSCLK_8MHz\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="HSE_SYSCLK_8MHz.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: HSE_SYSCLK_8MHz.elf
+arm-none-eabi-gcc -o "PLL-SYSCLK.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\yadav\OneDrive\Documents\Udemy\UdemyCources\MasteringMCU-2\MasteringMCU-Part2-Stm32Workspace\PLL-SYSCLK\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="PLL-SYSCLK.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: PLL-SYSCLK.elf
  
-arm-none-eabi-objdump -h -S  HSE_SYSCLK_8MHz.elf  > "HSE_SYSCLK_8MHz.list"
-arm-none-eabi-objcopy  -O binary  HSE_SYSCLK_8MHz.elf  "HSE_SYSCLK_8MHz.bin"
-arm-none-eabi-size   HSE_SYSCLK_8MHz.elf 
+arm-none-eabi-objdump -h -S  PLL-SYSCLK.elf  > "PLL-SYSCLK.list"
+arm-none-eabi-objcopy  -O binary  PLL-SYSCLK.elf  "PLL-SYSCLK.bin"
+arm-none-eabi-size   PLL-SYSCLK.elf 
    text	   data	    bss	    dec	    hex	filename
-  10328	    120	   1664	  12112	   2f50	HSE_SYSCLK_8MHz.elf
+  10436	    120	   1664	  12220	   2fbc	PLL-SYSCLK.elf
 Finished building: default.size.stdout
  
-Finished building: HSE_SYSCLK_8MHz.bin
+Finished building: PLL-SYSCLK.bin
  
-Finished building: HSE_SYSCLK_8MHz.list
+Finished building: PLL-SYSCLK.list
  
-22:56:57 **** Incremental Build of configuration Debug for project HSE_SYSCLK_8MHz ****
+19:00:28 **** Incremental Build of configuration Debug for project PLL-SYSCLK ****
 make -j12 all 
-arm-none-eabi-size   HSE_SYSCLK_8MHz.elf 
+arm-none-eabi-size   PLL-SYSCLK.elf 
    text	   data	    bss	    dec	    hex	filename
-  10328	    120	   1664	  12112	   2f50	HSE_SYSCLK_8MHz.elf
+  10436	    120	   1664	  12220	   2fbc	PLL-SYSCLK.elf
 Finished building: default.size.stdout
+ 
+19:02:01 **** Incremental Build of configuration Debug for project PLL-SYSCLK ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "PLL-SYSCLK.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\yadav\OneDrive\Documents\Udemy\UdemyCources\MasteringMCU-2\MasteringMCU-Part2-Stm32Workspace\PLL-SYSCLK\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="PLL-SYSCLK.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: PLL-SYSCLK.elf
+ 
+arm-none-eabi-objdump -h -S  PLL-SYSCLK.elf  > "PLL-SYSCLK.list"
+arm-none-eabi-objcopy  -O binary  PLL-SYSCLK.elf  "PLL-SYSCLK.bin"
+arm-none-eabi-size   PLL-SYSCLK.elf 
+   text	   data	    bss	    dec	    hex	filename
+  10436	    120	   1664	  12220	   2fbc	PLL-SYSCLK.elf
+Finished building: default.size.stdout
+ 
+Finished building: PLL-SYSCLK.bin
+ 
+Finished building: PLL-SYSCLK.list
  
