@@ -14,10 +14,6 @@ UART_HandleTypeDef huart2;
 
 char *test_data = "The application is running\r\n";
 
-void SystemClockConfig(void);
-void UART2_Init(void);
-void Error_handler(void);
-
 int main()
 {
 	HAL_Init(); // Initialize Hardware Abstraction Layer

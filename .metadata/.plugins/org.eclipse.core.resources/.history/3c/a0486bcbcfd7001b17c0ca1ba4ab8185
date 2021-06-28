@@ -10,13 +10,11 @@
 #include "main.h"
 #include "stm32f4xx_hal.h"
 
+@ -14,39 +16,74 @@
+
 UART_HandleTypeDef huart2;
 
 char *test_data = "The application is running\r\n";
-
-void SystemClockConfig(void);
-void UART2_Init(void);
-void Error_handler(void);
 
 int main()
 {

@@ -1,41 +1,17 @@
-21:45:47 **** Incremental Build of configuration Debug for project PLL-SYSCLK-HSE ****
+22:24:09 **** Incremental Build of configuration Debug for project UART2_Example ****
 make -j12 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-arm-none-eabi-gcc -o "PLL-SYSCLK-HSE.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\yadav\OneDrive\Documents\Udemy\UdemyCources\MasteringMCU-2\MasteringMCU-Part2-Stm32Workspace\PLL-SYSCLK-HSE\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="PLL-SYSCLK-HSE.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: PLL-SYSCLK-HSE.elf
+arm-none-eabi-gcc "../Core/Src/it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/it.d" -MT"Core/Src/it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/it.o"
+arm-none-eabi-gcc -o "UART2_Example.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\yadav\OneDrive\Documents\Udemy\UdemyCources\MasteringMCU-2\MasteringMCU-Part2-Stm32Workspace\UART2_Example\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="UART2_Example.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: UART2_Example.elf
  
-arm-none-eabi-objdump -h -S  PLL-SYSCLK-HSE.elf  > "PLL-SYSCLK-HSE.list"
-arm-none-eabi-objcopy  -O binary  PLL-SYSCLK-HSE.elf  "PLL-SYSCLK-HSE.bin"
-arm-none-eabi-size   PLL-SYSCLK-HSE.elf 
+arm-none-eabi-objdump -h -S  UART2_Example.elf  > "UART2_Example.list"
+arm-none-eabi-objcopy  -O binary  UART2_Example.elf  "UART2_Example.bin"
+arm-none-eabi-size   UART2_Example.elf 
    text	   data	    bss	    dec	    hex	filename
-  10564	    120	   1664	  12348	   303c	PLL-SYSCLK-HSE.elf
+   5520	     24	   1640	   7184	   1c10	UART2_Example.elf
 Finished building: default.size.stdout
  
-Finished building: PLL-SYSCLK-HSE.bin
+Finished building: UART2_Example.bin
  
-Finished building: PLL-SYSCLK-HSE.list
- 
-21:45:50 **** Incremental Build of configuration Debug for project PLL-SYSCLK-HSE ****
-make -j12 all 
-arm-none-eabi-size   PLL-SYSCLK-HSE.elf 
-   text	   data	    bss	    dec	    hex	filename
-  10564	    120	   1664	  12348	   303c	PLL-SYSCLK-HSE.elf
-Finished building: default.size.stdout
- 
-21:46:20 **** Incremental Build of configuration Debug for project PLL-SYSCLK-HSE ****
-make -j12 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-arm-none-eabi-gcc -o "PLL-SYSCLK-HSE.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\yadav\OneDrive\Documents\Udemy\UdemyCources\MasteringMCU-2\MasteringMCU-Part2-Stm32Workspace\PLL-SYSCLK-HSE\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="PLL-SYSCLK-HSE.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: PLL-SYSCLK-HSE.elf
- 
-arm-none-eabi-objdump -h -S  PLL-SYSCLK-HSE.elf  > "PLL-SYSCLK-HSE.list"
-arm-none-eabi-objcopy  -O binary  PLL-SYSCLK-HSE.elf  "PLL-SYSCLK-HSE.bin"
-arm-none-eabi-size   PLL-SYSCLK-HSE.elf 
-   text	   data	    bss	    dec	    hex	filename
-  10564	    120	   1664	  12348	   303c	PLL-SYSCLK-HSE.elf
-Finished building: default.size.stdout
- 
-Finished building: PLL-SYSCLK-HSE.bin
- 
-Finished building: PLL-SYSCLK-HSE.list
+Finished building: UART2_Example.list
  
