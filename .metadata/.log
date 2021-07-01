@@ -411,3 +411,6 @@ java.io.FileNotFoundException: C:\Users\yadav\OneDrive\Documents\Udemy\UdemyCour
 	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1021)
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$2.run(DebugUIPlugin.java:1224)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.cdt.core 1 0 2021-06-28 22:43:53.255
+!MESSAGE Indexed 'TIME-BASE-100ms' (22 sources, 82 headers) in 2.24 sec: 4,667 declarations; 21,661 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.0076%)

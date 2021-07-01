@@ -1,0 +1,38 @@
+ /*
+ * main.c
+ *
+ *  Created on: Jun 22, 2021
+ *      Author: yadav
+ */
+
+#include <string.h>
+
+#include "main.h"
+
+TIM_HandleTypeDef htim10;
+
+void SystemClockConfig(void);
+
+void Error_handler(void);
+
+int main()
+{
+	HAL_Init(); // Initialize Hardware Abstraction Layer
+	SystemClockConfig(); // Initialize custom clock setting (If not then internal
+	                     // oscillator will be used)
+
+	while(1);
+
+	return 0;
+}
+
+void SystemClockConfig(void)
+{
+
+}
+
+
+void Error_handler(void)
+{
+	while(1);
+}

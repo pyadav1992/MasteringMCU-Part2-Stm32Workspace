@@ -1,0 +1,44 @@
+ /*
+ * main.c
+ *
+ *  Created on: Jun 22, 2021
+ *      Author: yadav
+ */
+
+#include <string.h>
+
+#include "main.h"
+
+TIM_HandleTypeDef htim10; // Using timer 10
+
+void SystemClockConfig(void);
+void TIMER6_init(void);
+void Error_handler(void);
+
+int main()
+{
+	HAL_Init(); // Initialize Hardware Abstraction Layer
+	SystemClockConfig(); // Initialize custom clock setting (If not then internal
+	                     // oscillator will be used)
+	TIMER10_init();
+
+	while(1);
+
+	return 0;
+}
+
+void SystemClockConfig(void)
+{
+
+}
+
+void TIMER6_init(void)
+{
+	htim10.Instance = TIM10;
+	htim10.Init.Prescaler =
+}
+
+void Error_handler(void)
+{
+	while(1);
+}
