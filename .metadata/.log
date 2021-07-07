@@ -414,3 +414,27 @@ java.io.FileNotFoundException: C:\Users\yadav\OneDrive\Documents\Udemy\UdemyCour
 
 !ENTRY org.eclipse.cdt.core 1 0 2021-06-28 22:43:53.255
 !MESSAGE Indexed 'TIME-BASE-100ms' (22 sources, 82 headers) in 2.24 sec: 4,667 declarations; 21,661 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.0076%)
+!SESSION 2021-07-06 21:22:09.787 -----------------------------------------------
+eclipse.buildId=Version 1.6.1
+java.version=11.0.9.1
+java.vendor=AdoptOpenJDK
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2021-07-06 21:22:28.662
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2021-07-06 21:22:28.725
+!MESSAGE Log4j initialized with config file C:\Users\yadav\OneDrive\Documents\Udemy\UdemyCources\MasteringMCU-2\MasteringMCU-Part2-Stm32Workspace\.metadata\.log4j.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2021-07-06 21:22:42.021
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 4 4 2021-07-06 21:22:42.586
+!MESSAGE com.st.stm32cube.ide.mcu.ide/META-INF/version/build_ref file not found, build reference will not be reported into properties
+
+!ENTRY org.eclipse.cdt.core 1 0 2021-07-06 21:24:55.335
+!MESSAGE Indexed 'TIME-BASE-100ms-IT' (22 sources, 99 headers) in 2.57 sec: 8,585 declarations; 42,961 references; 7 unresolved inclusions; 322 syntax errors; 1,237 unresolved names (2.3%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2021-07-06 21:47:53.005
+!MESSAGE Indexed 'TIME-BASE-10micro' (22 sources, 104 headers) in 2.2 sec: 8,943 declarations; 44,618 references; 2 unresolved inclusions; 42 syntax errors; 147 unresolved names (0.27%)

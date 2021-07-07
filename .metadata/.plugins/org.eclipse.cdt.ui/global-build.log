@@ -1,24 +1,14 @@
-23:40:45 **** Incremental Build of configuration Debug for project TIME-BASE-100ms ****
+21:52:52 **** Incremental Build of configuration Debug for project TIME-BASE-10micro ****
 make -j12 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-arm-none-eabi-gcc -o "TIME-BASE-100ms.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\yadav\OneDrive\Documents\Udemy\UdemyCources\MasteringMCU-2\MasteringMCU-Part2-Stm32Workspace\TIME-BASE-100ms\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TIME-BASE-100ms.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: TIME-BASE-100ms.elf
- 
-arm-none-eabi-objdump -h -S  TIME-BASE-100ms.elf  > "TIME-BASE-100ms.list"
-arm-none-eabi-objcopy  -O binary  TIME-BASE-100ms.elf  "TIME-BASE-100ms.bin"
-arm-none-eabi-size   TIME-BASE-100ms.elf 
+arm-none-eabi-size   TIME-BASE-10micro.elf 
    text	   data	    bss	    dec	    hex	filename
-   3248	     20	   1644	   4912	   1330	TIME-BASE-100ms.elf
+   7240	     20	   1644	   8904	   22c8	TIME-BASE-10micro.elf
 Finished building: default.size.stdout
  
-Finished building: TIME-BASE-100ms.bin
- 
-Finished building: TIME-BASE-100ms.list
- 
-23:40:48 **** Incremental Build of configuration Debug for project TIME-BASE-100ms ****
+21:53:07 **** Incremental Build of configuration Debug for project TIME-BASE-10micro ****
 make -j12 all 
-arm-none-eabi-size   TIME-BASE-100ms.elf 
+arm-none-eabi-size   TIME-BASE-10micro.elf 
    text	   data	    bss	    dec	    hex	filename
-   3248	     20	   1644	   4912	   1330	TIME-BASE-100ms.elf
+   7240	     20	   1644	   8904	   22c8	TIME-BASE-10micro.elf
 Finished building: default.size.stdout
  
