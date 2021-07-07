@@ -1,1 +1,1 @@
-Generate timer interrupt with time base of 100 micro seconds
+Using Timer 10 as a input capture and find the frequency of the input signal (LSE clock)
